@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RUN THROUGH</title>
+<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+<style type="text/css">
+.main-section{
+margin:0 auto;
+padding: 0px;
+margin-top: 0px;
+background-color: #fff;
+box-shadow: 0px 0px 10px #c1c1c1;
+}
+#custom_card2{
+border: 1px solid black;
+margin-left: 130px;
+background-color: mistyrose;
+padding-top: 50px;
+    padding-right: 50px;
+    padding-bottom: 100px;
+    padding-left: 80px;
+}
+</style>
+ 
+    <!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.3/css/mdb.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="/">Summarizer</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+
+
+    </ul>
+
+  </div>
+</nav>
+<br/>
+
+<div class="jumbotron" style="background:#0686e4;color:#fff">
+    <div class="container">
+      <h2 class="display-3">Run-Through</h2>
+      <h3>spaCy summarizer</h3>
+      <p><a class="btn btn-success waves-effect btn-lg" href="/" role="button">Refresh &raquo;</a></p>
+    </div>
+  </div>
+<br/>
+<div class="container" >
+  <form method="POST",action="/summariser_spacy", enctype=multipart/form-data>
+    <div class="main-section" >
+      <h5>Choose the file to summarise</h5>
+      <input type="file" name="file" class="file-upload" required="true" >
+    </div>
+    <br/>
+    <button class="btn btn-small waves-effect waves-light black lighten-1" type="reset">Clear</button>
+    <button class="btn btn-small waves-effect waves- black lighten-1" type="submit">Summarize</button>
+  </form>
+</div>
+<br/>
+<div class="container">
+  <form method="POST" action="/url_text", enctype=multipart/form-data>
+    <div class="main-section">
+      <h5 class="material-icons">Web Scraping</h5>
+      <input type="text" name="raw_url" placeholder="Enter URL Here" required="true">
+    </div>
+    <br/>
+    <button class="btn btn-small waves-effect waves-light black lighten-1" type="reset">Clear</button>
+    <button class="btn btn-small waves-effect waves- black lighten-1" type="submit">Summarize</button>
+  </form>
+</div>
+<br/>
+</div>
+
+<div class="col-md-10">
+  <div class="card mb-10 shadow-sm" id="custom_card2">
+    <h4>Summary:)</h4>
+    <p1>{{ filename }}</p1>
+    <p2>{{ summary_scraped }}</p2>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.3/js/mdb.min.js"></script>
+
+<script src="{{ url_for('static', filename='js/main.js')}}"></script>
+<script type="text/javascript">
+$('.file_upload').file_upload();
+</script>
+</body>
+</html>
+
+</body>
+</html>

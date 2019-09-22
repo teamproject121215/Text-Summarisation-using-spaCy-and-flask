@@ -1,1 +1,4 @@
-# Text-Summarisation-using-spaCy-and-flask
+# Text-Summarisation-app-using-spaCy-and-flask
+Natural Language Processing is a rapidly growing concept now in the field of data science and text summarisation is one of the applications of NLP on which this project is based. A flask user-interface is created to summarise any given PDF document or any web article by giving its URL. Web scraping is implemented to scrape the web article. Preprocessing of the source text is done before summarising it.
+An open-source library of python which effectively performs most of the NLP tasks, 'spaCy', is used to tokenise and to remove unnecessary stopwords from the source text.
+Summary is generated after generating a dictionary of word frquency, tokenising each sentences, scoring each sentence using term frequency method and finally joining all the sentence having highest scores.
